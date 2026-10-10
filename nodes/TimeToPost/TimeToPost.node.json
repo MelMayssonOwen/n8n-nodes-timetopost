@@ -1,0 +1,14 @@
+{
+	"node": "n8n-nodes-timetopost.timeToPost",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Marketing & Content"],
+	"resources": {
+		"credentialDocumentation": [
+			{ "url": "https://timetopost.co/integrations/n8n" }
+		],
+		"primaryDocumentation": [
+			{ "url": "https://timetopost.co/integrations/n8n" }
+		]
+	}
+}

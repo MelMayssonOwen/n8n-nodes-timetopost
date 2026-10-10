@@ -1,0 +1,45 @@
+{
+  "name": "TimeToPost: daily draft for approval",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            { "field": "days", "daysInterval": 1, "triggerAtHour": 9 }
+          ]
+        }
+      },
+      "id": "7a1f0c52-3b0e-4c53-9d10-1a5c0f6e0001",
+      "name": "Every day at 9",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [0, 0]
+    },
+    {
+      "parameters": {
+        "resource": "draft",
+        "operation": "create",
+        "platform": "twitter",
+        "text": "Daily note from n8n. Replace this with your own text or an expression.",
+        "externalRef": "={{ 'daily-' + $now.toFormat('yyyy-MM-dd') }}",
+        "additionalFields": {}
+      },
+      "id": "7a1f0c52-3b0e-4c53-9d10-1a5c0f6e0002",
+      "name": "TimeToPost",
+      "type": "n8n-nodes-timetopost.timeToPost",
+      "typeVersion": 1,
+      "position": [260, 0],
+      "credentials": {
+        "timeToPostApi": { "id": "REPLACE_WITH_YOUR_CREDENTIAL", "name": "TimeToPost API" }
+      }
+    }
+  ],
+  "connections": {
+    "Every day at 9": {
+      "main": [[{ "node": "TimeToPost", "type": "main", "index": 0 }]]
+    }
+  },
+  "active": false,
+  "settings": { "executionOrder": "v1" },
+  "pinData": {}
+}
