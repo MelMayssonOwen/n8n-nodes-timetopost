@@ -1,6 +1,8 @@
 # n8n-nodes-timetopost
 
-n8n community node for [TimeToPost](https://timetopost.co/integrations/n8n).
+n8n community node for [TimeToPost](https://timetopost.co/integrations/n8n). Create approval-gated drafts, schedule posts, and list posts and connected accounts from any n8n workflow.
+
+Docs: https://timetopost.co/integrations/n8n . npm: https://www.npmjs.com/package/n8n-nodes-timetopost . CLI: https://github.com/MelMayssonOwen/timetopost-cli
 
 ## Install
 
@@ -35,4 +37,6 @@ npm test
 npm run build
 ```
 
-Releases: push a tag `n8n-v<version>`; `.github/workflows/publish-n8n.yml` publishes with npm provenance.
+Releases: bump the version in `package.json`, then push a tag `v<version>`. `.github/workflows/publish.yml` publishes to npm with provenance.
+
+MIT licensed.
